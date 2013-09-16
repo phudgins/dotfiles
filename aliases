@@ -2,6 +2,7 @@ alias -g zspec="zeus rspec"
 alias -g v="vim"
 alias -g vv="vim -o"
 alias -g bb="brew update && brew upgrade"
+alias -g deadhorse="open http://i.imgur.com/IwK5sDa.gif"
 
 hist() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
