@@ -9,8 +9,6 @@ set showmode              " Current mode and commands
 set showcmd               "
 set nowrap                " Don't make it look like there are line wraps
 
-"let loaded_matchparen = 1 " Disable annyoing paren matching
-
 set textwidth=100
 
 set autoindent            " These 4 options format our files nicely
