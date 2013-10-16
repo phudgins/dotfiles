@@ -33,6 +33,10 @@ hi Comment term=bold ctermfg=lightblue guifg=lightblue
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd FileType slim setlocal noexpandtab
 
+" We only want tabs for sass files
+autocmd BufNewFile,BufRead *.sass set filetype=sass
+autocmd FileType sass setlocal noexpandtab
+
 " We only want tabs for coffee files
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd FileType coffee setlocal noexpandtab
@@ -75,6 +79,9 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 " Close Vimux runner
 nmap ,c :VimuxCloseRunner<cr>
+
+" Run current ruby file from Vimux
+nmap ,r :w\|:call VimuxRunCommand("clear; ruby " . bufname("%"))<cr>
 
 if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype *
