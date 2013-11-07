@@ -2,6 +2,7 @@ alias -g zspec="zeus rspec"
 alias -g v="vim"
 alias -g vv="vim -o"
 alias -g bb="brew update && brew upgrade"
+alias -g bd="brew doctor"
 alias -g deadhorse="open http://i.imgur.com/IwK5sDa.gif"
 alias -g ggprune="g remote prune origin"
 
@@ -10,3 +11,4 @@ hist() {
 }
 
 dmail() { echo "d *" | mail > /dev/null 2>&1; }
+alias rake="noglob rake"
