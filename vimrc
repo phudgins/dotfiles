@@ -74,6 +74,9 @@ noremap <Right> <NOP>
 " Better gitcommit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
+" Spellcheck for Markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 " Copy visual selection to clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
 
