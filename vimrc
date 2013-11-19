@@ -19,6 +19,7 @@ set pastetoggle=<F2>
 set number
 set ruler
 set laststatus=2
+set complete+=kspell
 filetype plugin indent on
 
 filetype on
