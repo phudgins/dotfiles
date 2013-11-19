@@ -87,6 +87,9 @@ nmap ,c :VimuxCloseRunner<cr>
 " Run current ruby file from Vimux
 nmap ,r :w\|:call VimuxRunCommand("clear; ruby " . bufname("%"))<cr>
 
+" Tab completion
+imap <Tab> <C-P>
+
 if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype *
 		    \	if &omnifunc == "" |
