@@ -5,6 +5,8 @@ alias -g bb="brew update && brew upgrade"
 alias -g bd="brew doctor"
 alias -g deadhorse="open http://i.imgur.com/IwK5sDa.gif"
 alias -g ggprune="g remote prune origin"
+alias -g ggstaging="ggpush && g push staging staging-master:master"
+alias -g ggmaster="ggpush && g push heroku master"
 
 hist() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
