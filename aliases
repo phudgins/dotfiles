@@ -8,6 +8,7 @@ alias -g ggprune="g remote prune origin"
 alias -g ggstaging="ggpush && g push staging staging-master:master"
 alias -g ggmaster="ggpush && g push heroku master"
 alias -g clear=" clear"
+alias -g factoid="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 
 hist() {
   fc -l 1 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
