@@ -11,6 +11,7 @@ export EDITOR="vim"
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_FREE_MIN=200000
 export DMM_ENVIRONMENT=local
+export SCALA_HOME=/usr/local/share/scala
 
 alias -g bx="bundle exec"
 alias -g ll="ls -l"
@@ -37,5 +38,5 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:$SCALA_HOME/bin
 eval "$(rbenv init -)"
