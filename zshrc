@@ -39,6 +39,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export GRAILS_HOME="/Users/pete.hudgins/grails"
+export GROOVY_HOME="/Users/pete.hudgins/groovy"
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/mysql/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:$SCALA_HOME/bin:$SBT_HOME/bin:$PLAY_HOME
+export PATH=/usr/local/bin:/usr/local/mysql/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:$SCALA_HOME/bin:$SBT_HOME/bin:$PLAY_HOME:$GRAILS_HOME/bin:$GROOVY_HOME/bin
+export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(jenv init -)"
