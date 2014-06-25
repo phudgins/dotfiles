@@ -1,6 +1,7 @@
 alias -g zspec="zeus rspec"
 alias -g v="vim"
 alias -g vv="vim -o"
+alias -g bu="brew update && brew outdated"
 alias -g bb="brew update && brew upgrade"
 alias -g bd="brew doctor"
 alias -g deadhorse="open http://i.imgur.com/IwK5sDa.gif"
@@ -12,6 +13,16 @@ alias -g factoid="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 
 hist() {
   fc -l 1 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+fuck() {
+  if killall -9 "$2"; then
+    echo "$(flip $2)"
+  fi
+}
+
+flip() {
+  echo ; echo " (╯°□°）╯︵$(echo "$1"|toilet -f term -F rotate)"; echo
 }
 
 dmail() { echo "d *" | mail > /dev/null 2>&1; }
