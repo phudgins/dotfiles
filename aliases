@@ -1,15 +1,32 @@
 alias -g zspec="zeus rspec"
 alias -g v="vim"
 alias -g vv="vim -o"
+alias -g b="brew"
 alias -g bu="brew update && brew outdated"
 alias -g bb="brew update && brew upgrade"
+alias -g bup="brew upgrade"
 alias -g bd="brew doctor"
 alias -g deadhorse="open http://i.imgur.com/IwK5sDa.gif"
 alias -g ggprune="g remote prune origin"
-alias -g ggstaging="ggpush && g push staging staging-master:master"
-alias -g ggmaster="ggpush && g push heroku master"
+alias -g tch="touch"
 alias -g clear=" clear"
-alias -g factoid="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
+alias -g factoid="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \| | tr -d '\n' | tr -s ' ' ' ' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'"
+alias -g shrug="echo -n '¯\_(ツ)_/¯'"
+alias -g glare="echo -n 'ಠ_ಠ'"
+alias -g leo="echo -n 'ᕕ(ᐛ)ᕗ'"
+alias -g likeasir="echo -n 'ಠ_ರೃ'"
+alias -g dealwithit="echo -n '(⌐■_■)'"
+alias -g flipTable="echo -n '(╯°□°)╯︵ ┻━┻'"
+alias -g mkdir="mkdir -pv"
+alias -g nstart="g f && ggpull && ggprune && npm install && npm start"
+alias -g nr="repl.history"
+alias -g sshpw="echo -n 'PHP@ssw0rd'"
+alias -g konami="echo -n '↑ ↑ ↓ ↓ ← → ← → B A'"
+alias -g fu="echo -n '凸ಠ益ಠ)凸'"
+alias -g rmkoala="echo -n 'https://i.imgur.com/LAwNmZW.gif'"
+alias -g giphyit="~/nodeproj/giphytest/index.js"
+alias -g bjlaunch="node ~/nodeproj/bluejeans-launcher/index.js"
+alias -g norfolkstandup="echo -n 'https://plus.google.com/hangouts/_/dominionenterprises.com/norfolk-dmm'"
 
 hist() {
   fc -l 1 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -22,8 +39,30 @@ fuck() {
 }
 
 flip() {
-  echo ; echo " (╯°□°）╯︵$(echo "$1"|toilet -f term -F rotate)"; echo
+  echo " (╯°□°）╯︵$(echo "$1"|toilet -f term -F rotate)"
+}
+
+nogood() {
+  find . -type f -name "good-file*log" -exec rm -f {} \;
+}
+
+respect(){
+  echo "$1 ノ(ಠ_ಠノ)"
 }
 
 dmail() { echo "d *" | mail > /dev/null 2>&1; }
 alias rake="noglob rake"
+
+wordfrequency () {
+  awk '
+     BEGIN { FS="[^a-zA-Z]+" } {
+         for (i=1; i<=NF; i++) {
+             word = tolower($i)
+             words[word]++
+         }
+     }
+     END {
+         for (w in words)
+              printf("%3d %s\n", words[w], w)
+     } ' | sort -rn
+}

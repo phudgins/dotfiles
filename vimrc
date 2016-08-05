@@ -10,6 +10,7 @@ set showcmd               "
 set nowrap                " Don't make it look like there are line wraps
 
 set textwidth=100
+set colorcolumn=100
 
 set autoindent            " These 4 options format our files nicely
 set tabstop=2             "
@@ -33,6 +34,10 @@ hi Comment term=bold ctermfg=lightblue guifg=lightblue
 " We only want tabs for slim files
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd FileType slim setlocal noexpandtab
+
+" We only want tabs for jade files
+autocmd BufNewFile,BufRead *.jade set filetype=jade
+autocmd FileType jade setlocal noexpandtab
 
 " We only want tabs for sass files
 autocmd BufNewFile,BufRead *.sass set filetype=sass
@@ -66,12 +71,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 nmap <F3> a<C-R>=strftime("%Y-%m-%d %H:%M")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 
-" No Arrow Keys!
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
 " Better gitcommit messages
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
@@ -86,9 +85,6 @@ nmap ,c :VimuxCloseRunner<cr>
 
 " Run current ruby file from Vimux
 nmap ,r :w\|:call VimuxRunCommand("clear; ruby " . bufname("%"))<cr>
-
-" Tab completion
-imap <Tab> <C-P>
 
 if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype *
